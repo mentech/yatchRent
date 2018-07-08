@@ -1,0 +1,647 @@
+﻿
+p {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    color: #5f6982;
+}
+
+.uploader {
+    display: block;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+    .uploader label {
+        float: left;
+        clear: both;
+        width: 100%;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        background: #fff;
+        border-radius: 7px;
+        border: 3px solid #eee;
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .uploader label:hover {
+            border-color: #454cad;
+        }
+
+        .uploader label.hover {
+            border: 3px solid #454cad;
+            box-shadow: inset 0 0 0 6px #eee;
+        }
+
+            .uploader label.hover #start i.fa {
+                -webkit-transform: scale(0.8);
+                transform: scale(0.8);
+                opacity: 0.3;
+            }
+
+    .uploader #start {
+        float: left;
+        clear: both;
+        width: 100%;
+    }
+
+        .uploader #start.hidden {
+            display: none;
+        }
+
+        .uploader #start i.fa {
+            font-size: 50px;
+            margin-bottom: 1rem;
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+
+    .uploader #response {
+        float: left;
+        clear: both;
+        width: 100%;
+    }
+
+        .uploader #response.hidden {
+            display: none;
+        }
+
+        .uploader #response #messages {
+            margin-bottom: .5rem;
+        }
+
+    .uploader #file-image {
+        display: inline;
+        margin: 0 auto .5rem auto;
+        width: auto;
+        height: auto;
+        max-width: 180px;
+    }
+
+        .uploader #file-image.hidden {
+            display: none;
+        }
+
+    .uploader #notimage {
+        display: block;
+        float: left;
+        clear: both;
+        width: 100%;
+    }
+
+        .uploader #notimage.hidden {
+            display: none;
+        }
+
+    .uploader progress,
+    .uploader .progress {
+        display: inline;
+        clear: both;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 180px;
+        height: 8px;
+        border: 0;
+        border-radius: 4px;
+        background-color: #eee;
+        overflow: hidden;
+    }
+
+        .uploader .progress[value]::-webkit-progress-bar {
+            border-radius: 4px;
+            background-color: #eee;
+        }
+
+        .uploader .progress[value]::-webkit-progress-value {
+            background: -webkit-linear-gradient(left, #393f90 0%, #454cad 50%);
+            background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+            border-radius: 4px;
+        }
+
+        .uploader .progress[value]::-moz-progress-bar {
+            background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+            border-radius: 4px;
+        }
+
+    .uploader input[type="file"] {
+        display: none;
+    }
+
+    .uploader div {
+        margin: 0 0 .5rem 0;
+        color: #5f6982;
+    }
+
+    .uploader .btn {
+        display: inline-block;
+        margin: .5rem .5rem 1rem .5rem;
+        clear: both;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        text-transform: initial;
+        border: none;
+        border-radius: .2rem;
+        outline: none;
+        padding: 0 1rem;
+        height: 36px;
+        line-height: 36px;
+        color: #fff;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        box-sizing: border-box;
+        background: #454cad;
+        border-color: #454cad;
+        cursor: pointer;
+    }
+/* responsive tasarımı  ------------------------------- */
+
+
+/* çoklu css ler  ------------------------------- */
+
+
+    .uploader1 label.hover #start1 i.fa {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.3;
+    }
+
+    .uploader1 #start1 {
+        float: left;
+        clear: both;
+        width: 100%;
+    }
+
+        .uploader1 #start1.hidden {
+            display: none;
+        }
+
+        .uploader1 #start1 i.fa {
+            font-size: 50px;
+            margin-bottom: 1rem;
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+
+    .uploader1 #response1 {
+        float: left;
+        clear: both;
+        width: 100%;
+    }
+
+        .uploader1 #response1.hidden {
+            display: none;
+        }
+
+        .uploader1 #response1 #messages1 {
+            margin-bottom: .5rem;
+        }
+
+    .uploader1 #file-image1 {
+        display: inline;
+        margin: 0 auto .5rem auto;
+        width: auto;
+        height: auto;
+        max-width: 180px;
+    }
+
+        .uploader1 #file-image1.hidden {
+            display: none;
+        }
+
+    .uploader1 #notimage1 {
+        display: block;
+        float: left;
+        clear: both;
+        width: 100%;
+    }
+
+        .uploader1 #notimage1.hidden {
+            display: none;
+        }
+
+    .uploader1 progress,
+    .uploader1 .progress1 {
+        display: inline;
+        clear: both;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 180px;
+        height: 8px;
+        border: 0;
+        border-radius: 4px;
+        background-color: #eee;
+        overflow: hidden;
+    }
+
+        .uploader1 .progress1[value]::-webkit-progress-bar {
+            border-radius: 4px;
+            background-color: #eee;
+        }
+
+        .uploader1 .progress1[value]::-webkit-progress-value {
+            background: -webkit-linear-gradient(left, #393f90 0%, #454cad 50%);
+            background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+            border-radius: 4px;
+        }
+
+        .uploader1 .progress1[value]::-moz-progress-bar {
+            background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+            border-radius: 4px;
+        }
+
+
+
+/* çoklu css ler  ------------------------------- */
+
+
+.uploader2 label.hover #start2 i.fa {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+}
+
+.uploader2 #start2 {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+    .uploader2 #start2.hidden {
+        display: none;
+    }
+
+    .uploader2 #start2 i.fa {
+        font-size: 50px;
+        margin-bottom: 1rem;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
+.uploader2 #response2 {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+    .uploader2 #response2.hidden {
+        display: none;
+    }
+
+    .uploader2 #response2 #messages2 {
+        margin-bottom: .5rem;
+    }
+
+.uploader2 #file-image2 {
+    display: inline;
+    margin: 0 auto .5rem auto;
+    width: auto;
+    height: auto;
+    max-width: 180px;
+}
+
+    .uploader2 #file-image2.hidden {
+        display: none;
+    }
+
+.uploader2 #notimage2 {
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+.uploader2 #notimage2.hidden {
+    display: none;
+}
+
+.uploader2 progress,
+.uploader2 .progress2 {
+    display: inline;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 180px;
+    height: 8px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+    .uploader2 .progress2[value]::-webkit-progress-bar {
+        border-radius: 4px;
+        background-color: #eee;
+    }
+
+    .uploader2 .progress2[value]::-webkit-progress-value {
+        background: -webkit-linear-gradient(left, #393f90 0%, #454cad 50%);
+        background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+        border-radius: 4px;
+    }
+
+    .uploader2 .progress2[value]::-moz-progress-bar {
+        background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+        border-radius: 4px;
+    }
+
+
+
+
+
+/* çoklu css ler  ------------------------------- */
+
+
+.uploader3 label.hover #start3 i.fa {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+}
+
+.uploader3 #start3 {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+    .uploader3 #start3.hidden {
+        display: none;
+    }
+
+    .uploader3 #start3 i.fa {
+        font-size: 50px;
+        margin-bottom: 1rem;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
+.uploader3 #response3 {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+    .uploader3 #response3.hidden {
+        display: none;
+    }
+
+    .uploader3 #response3 #messages3 {
+        margin-bottom: .5rem;
+    }
+
+.uploader3 #file-image3 {
+    display: inline;
+    margin: 0 auto .5rem auto;
+    width: auto;
+    height: auto;
+    max-width: 180px;
+}
+
+    .uploader3 #file-image3.hidden {
+        display: none;
+    }
+
+.uploader3 #notimage3 {
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+.uploader3 #notimage3.hidden {
+    display: none;
+}
+
+.uploader3 progress,
+.uploader3 .progress3 {
+    display: inline;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 180px;
+    height: 8px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+    .uploader3 .progress3[value]::-webkit-progress-bar {
+        border-radius: 4px;
+        background-color: #eee;
+    }
+
+    .uploader3 .progress3[value]::-webkit-progress-value {
+        background: -webkit-linear-gradient(left, #393f90 0%, #454cad 50%);
+        background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+        border-radius: 4px;
+    }
+
+    .uploader3 .progress3[value]::-moz-progress-bar {
+        background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+        border-radius: 4px;
+    }
+
+
+
+
+
+/* çoklu css ler  ------------------------------- */
+
+
+.uploader4 label.hover #start4 i.fa {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+}
+
+.uploader4 #start4 {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+    .uploader4 #start4.hidden {
+        display: none;
+    }
+
+    .uploader4 #start4 i.fa {
+        font-size: 50px;
+        margin-bottom: 1rem;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
+.uploader4 #response4 {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+    .uploader4 #response4.hidden {
+        display: none;
+    }
+
+    .uploader4 #response4 #messages4{
+        margin-bottom: .5rem;
+    }
+
+.uploader4 #file-image4 {
+    display: inline;
+    margin: 0 auto .5rem auto;
+    width: auto;
+    height: auto;
+    max-width: 180px;
+}
+
+    .uploader4 #file-image4.hidden {
+        display: none;
+    }
+
+.uploader4 #notimage4 {
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+.uploader4 #notimage4.hidden {
+    display: none;
+}
+
+.uploader4 progress,
+.uploader4 .progress4 {
+    display: inline;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 180px;
+    height: 8px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+    .uploader4 .progress4[value]::-webkit-progress-bar {
+        border-radius: 4px;
+        background-color: #eee;
+    }
+
+    .uploader4 .progress4[value]::-webkit-progress-value {
+        background: -webkit-linear-gradient(left, #393f90 0%, #454cad 50%);
+        background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+        border-radius: 4px;
+    }
+
+    .uploader4 .progress4[value]::-moz-progress-bar {
+        background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+        border-radius: 4px;
+    }
+
+
+
+
+
+
+/* çoklu css ler  ------------------------------- */
+
+
+.uploader5 label.hover #start5 i.fa {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+}
+
+.uploader5 #start5 {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+    .uploader5 #start5.hidden {
+        display: none;
+    }
+
+    .uploader5 #start5 i.fa {
+        font-size: 50px;
+        margin-bottom: 1rem;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
+.uploader5 #response5 {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+    .uploader5 #response5.hidden {
+        display: none;
+    }
+
+    .uploader5 #response5 #messages5 {
+        margin-bottom: .5rem;
+    }
+
+.uploader5 #file-image5 {
+    display: inline;
+    margin: 0 auto .5rem auto;
+    width: auto;
+    height: auto;
+    max-width: 180px;
+}
+
+    .uploader5 #file-image5.hidden {
+        display: none;
+    }
+
+.uploader5 #notimage5 {
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+    .uploader5 #notimage5.hidden {
+        display: none;
+    }
+
+.uploader5 progress,
+.uploader5 .progress5 {
+    display: inline;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 180px;
+    height: 8px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+    .uploader5 .progress5[value]::-webkit-progress-bar {
+        border-radius: 4px;
+        background-color: #eee;
+    }
+
+    .uploader5 .progress5[value]::-webkit-progress-value {
+        background: -webkit-linear-gradient(left, #393f90 0%, #454cad 50%);
+        background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+        border-radius: 4px;
+    }
+
+    .uploader5 .progress5[value]::-moz-progress-bar {
+        background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+        border-radius: 4px;
+    }
+
+

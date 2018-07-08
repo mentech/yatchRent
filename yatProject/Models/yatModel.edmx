@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbTekneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="customerID" />
+          </Key>
+          <Property Name="customerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="40" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="30" />
+          <Property Name="city" Type="nvarchar" MaxLength="20" />
+          <Property Name="country" Type="nvarchar" MaxLength="20" />
+          <Property Name="phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" MaxLength="30" />
+          <Property Name="password" Type="nvarchar" MaxLength="20" />
+          <Property Name="gender" Type="nvarchar" MaxLength="5" />
+          <Property Name="userID" Type="int" />
+          <Property Name="accountStatus" Type="bit" />
+          <Property Name="registerDate" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tblExtraService">
+          <Key>
+            <PropertyRef Name="extraID" />
+          </Key>
+          <Property Name="extraID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productID" Type="int" Nullable="false" />
+          <Property Name="serpmeKahvalti" Type="int" />
+          <Property Name="yemekAlkolsuz" Type="int" />
+          <Property Name="kahvalti" Type="int" />
+          <Property Name="yemekAlkollu" Type="int" />
+          <Property Name="kokteylAlkolsuz" Type="int" />
+          <Property Name="kokteylAlkollu" Type="int" />
+          <Property Name="volkan" Type="int" />
+          <Property Name="kemanci" Type="int" />
+          <Property Name="dansoz" Type="int" />
+          <Property Name="lazerGosterisi" Type="int" />
+          <Property Name="fasilGrubu" Type="int" />
+          <Property Name="dj" Type="int" />
+          <Property Name="garson" Type="int" />
+          <Property Name="susleme" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTekne.dbo.tblImage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblImage">
+          <Key>
+            <PropertyRef Name="imageID" />
+            <PropertyRef Name="productId" />
+          </Key>
+          <Property Name="imageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="img1" Type="nvarchar" MaxLength="50" />
+          <Property Name="img1s" Type="nvarchar" MaxLength="50" />
+          <Property Name="img2" Type="nvarchar" MaxLength="50" />
+          <Property Name="img2s" Type="nvarchar" MaxLength="50" />
+          <Property Name="img3" Type="nvarchar" MaxLength="50" />
+          <Property Name="img3s" Type="nvarchar" MaxLength="50" />
+          <Property Name="img4" Type="nvarchar" MaxLength="50" />
+          <Property Name="img4s" Type="nvarchar" MaxLength="50" />
+          <Property Name="img5" Type="nvarchar" MaxLength="50" />
+          <Property Name="img5s" Type="nvarchar" MaxLength="50" />
+          <Property Name="img6" Type="nvarchar" MaxLength="50" />
+          <Property Name="img6s" Type="nvarchar" MaxLength="50" />
+          <Property Name="img7" Type="nvarchar" MaxLength="50" />
+          <Property Name="img7s" Type="nvarchar" MaxLength="50" />
+          <Property Name="img8" Type="nvarchar" MaxLength="50" />
+          <Property Name="img8s" Type="nvarchar" MaxLength="50" />
+          <Property Name="img9" Type="nvarchar" MaxLength="50" />
+          <Property Name="img9s" Type="nvarchar" MaxLength="50" />
+          <Property Name="img10" Type="nvarchar" MaxLength="50" />
+          <Property Name="img10s" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblKullaniciTipleri">
+          <Key>
+            <PropertyRef Name="kullaniciID" />
+          </Key>
+          <Property Name="kullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kullaniciTipi" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblMusicSystem">
+          <Key>
+            <PropertyRef Name="musicID" />
+          </Key>
+          <Property Name="musicID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bluetooth" Type="bit" />
+          <Property Name="usb" Type="bit" />
+          <Property Name="aux" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblPayment">
+          <Key>
+            <PropertyRef Name="paymentID" />
+          </Key>
+          <Property Name="paymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="creditCard" Type="bit" />
+          <Property Name="bankCard" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblProduct">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="descriptionTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="descriptionP1" Type="nvarchar" MaxLength="500" />
+          <Property Name="descriptionP2" Type="nvarchar" MaxLength="500" />
+          <Property Name="descriptionP3" Type="nvarchar" MaxLength="500" />
+          <Property Name="picturesID" Type="int" />
+          <Property Name="discountPercentage" Type="int" />
+          <Property Name="discountAvailable" Type="bit" />
+          <Property Name="suplierID" Type="int" />
+          <Property Name="minRentHour" Type="int" />
+          <Property Name="approved" Type="bit" />
+          <Property Name="yapimYili" Type="int" />
+          <Property Name="cabinetNumber" Type="tinyint" />
+          <Property Name="captain" Type="bit" />
+          <Property Name="length" Type="float" />
+          <Property Name="brand" Type="nvarchar" MaxLength="30" />
+          <Property Name="model" Type="nvarchar" MaxLength="30" />
+          <Property Name="typeID" Type="int" />
+          <Property Name="musicSystemID" Type="int" />
+          <Property Name="oneStarNum" Type="int" />
+          <Property Name="twoStarNum" Type="int" />
+          <Property Name="threeStarNum" Type="int" />
+          <Property Name="fourStarNum" Type="int" />
+          <Property Name="fiveStarNum" Type="int" />
+          <Property Name="starAverage" Type="float" />
+          <Property Name="guestCapacity" Type="int" />
+          <Property Name="guestLanchCapacity" Type="int" />
+          <Property Name="airCondition" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblProductRank">
+          <Key>
+            <PropertyRef Name="rankID" />
+          </Key>
+          <Property Name="rankID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productID" Type="int" />
+          <Property Name="customerID" Type="int" />
+          <Property Name="rankPoint" Type="int" />
+        </EntityType>
+        <EntityType Name="tblProductType">
+          <Key>
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Name="typeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productID" Type="int" />
+          <Property Name="gulet" Type="bit" />
+          <Property Name="yelkenli" Type="bit" />
+          <Property Name="motorYat" Type="bit" />
+          <Property Name="katamaran" Type="bit" />
+          <Property Name="trawler" Type="bit" />
+          <Property Name="lobster" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblReservation">
+          <Key>
+            <PropertyRef Name="reservationID" />
+          </Key>
+          <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customerID" Type="int" />
+          <Property Name="paymentID" Type="int" />
+          <Property Name="createdDate" Type="nvarchar" MaxLength="20" />
+          <Property Name="startDate" Type="nvarchar" MaxLength="20" />
+          <Property Name="finishDate" Type="nvarchar" MaxLength="20" />
+          <Property Name="startTime" Type="nvarchar" MaxLength="6" />
+          <Property Name="finishTime" Type="nvarchar" MaxLength="6" />
+          <Property Name="cancelled" Type="bit" />
+          <Property Name="paymentDate" Type="nvarchar" MaxLength="20" />
+          <Property Name="productID" Type="int" />
+          <Property Name="resDetailID" Type="int" />
+          <Property Name="priceHour" Type="int" />
+          <Property Name="quantityHour" Type="int" />
+          <Property Name="discount" Type="int" />
+          <Property Name="totalBoatPrice" Type="int" />
+          <Property Name="paidedPrice" Type="int" />
+          <Property Name="tourType" Type="nvarchar" MaxLength="50" />
+          <Property Name="extrasNames" Type="nvarchar" MaxLength="100" />
+          <Property Name="extrasTotalPrice" Type="int" />
+          <Property Name="total" Type="int" />
+        </EntityType>
+        <EntityType Name="tblSuplier">
+          <Key>
+            <PropertyRef Name="suplierID" />
+          </Key>
+          <Property Name="suplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="companyName" Type="varchar" MaxLength="50" />
+          <Property Name="contactName" Type="varchar" MaxLength="30" />
+          <Property Name="contactLastName" Type="varchar" MaxLength="20" />
+          <Property Name="adres" Type="nvarchar" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" MaxLength="20" />
+          <Property Name="country" Type="nvarchar" MaxLength="20" />
+          <Property Name="phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" MaxLength="40" />
+          <Property Name="webSite" Type="nvarchar" MaxLength="50" />
+          <Property Name="paymentMethodID" Type="int" />
+          <Property Name="discountPercentage" Type="int" />
+          <Property Name="discountAvailable" Type="int" />
+          <Property Name="currentReservationID" Type="int" />
+          <Property Name="logo" Type="image" />
+          <Property Name="pictureNum" Type="int" />
+          <Property Name="adminAprove" Type="int" />
+          <Property Name="userID" Type="int" />
+          <Property Name="statusActive" Type="int" />
+          <Property Name="registerDate" Type="date" />
+        </EntityType>
+        <EntityType Name="tblYatRezSaatleri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="dayDate" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="s0" Type="bit" />
+          <Property Name="s1" Type="bit" />
+          <Property Name="s2" Type="bit" />
+          <Property Name="s3" Type="bit" />
+          <Property Name="s4" Type="bit" />
+          <Property Name="s5" Type="bit" />
+          <Property Name="s6" Type="bit" />
+          <Property Name="s7" Type="bit" />
+          <Property Name="s8" Type="bit" />
+          <Property Name="s9" Type="bit" />
+          <Property Name="s10" Type="bit" />
+          <Property Name="s11" Type="bit" />
+          <Property Name="s12" Type="bit" />
+          <Property Name="s13" Type="bit" />
+          <Property Name="s14" Type="bit" />
+          <Property Name="s15" Type="bit" />
+          <Property Name="s16" Type="bit" />
+          <Property Name="s17" Type="bit" />
+          <Property Name="s18" Type="bit" />
+          <Property Name="s19" Type="bit" />
+          <Property Name="s20" Type="bit" />
+          <Property Name="s21" Type="bit" />
+          <Property Name="s22" Type="bit" />
+          <Property Name="s23" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="dbTekneModelStoreContainer">
+          <EntitySet Name="tblCustomer" EntityType="Self.tblCustomer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblExtraService" EntityType="Self.tblExtraService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblKullaniciTipleri" EntityType="Self.tblKullaniciTipleri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMusicSystem" EntityType="Self.tblMusicSystem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPayment" EntityType="Self.tblPayment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProduct" EntityType="Self.tblProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProductRank" EntityType="Self.tblProductRank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProductType" EntityType="Self.tblProductType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblReservation" EntityType="Self.tblReservation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSuplier" EntityType="Self.tblSuplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblYatRezSaatleri" EntityType="Self.tblYatRezSaatleri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblImage" EntityType="Self.tblImage" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblImage].[imageID] AS [imageID], 
+    [tblImage].[productId] AS [productId], 
+    [tblImage].[img1] AS [img1], 
+    [tblImage].[img1s] AS [img1s], 
+    [tblImage].[img2] AS [img2], 
+    [tblImage].[img2s] AS [img2s], 
+    [tblImage].[img3] AS [img3], 
+    [tblImage].[img3s] AS [img3s], 
+    [tblImage].[img4] AS [img4], 
+    [tblImage].[img4s] AS [img4s], 
+    [tblImage].[img5] AS [img5], 
+    [tblImage].[img5s] AS [img5s], 
+    [tblImage].[img6] AS [img6], 
+    [tblImage].[img6s] AS [img6s], 
+    [tblImage].[img7] AS [img7], 
+    [tblImage].[img7s] AS [img7s], 
+    [tblImage].[img8] AS [img8], 
+    [tblImage].[img8s] AS [img8s], 
+    [tblImage].[img9] AS [img9], 
+    [tblImage].[img9s] AS [img9s], 
+    [tblImage].[img10] AS [img10], 
+    [tblImage].[img10s] AS [img10s]
+    FROM [dbo].[tblImage] AS [tblImage]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbTekneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="customerID" />
+          </Key>
+          <Property Name="customerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="lastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="userID" Type="Int32" />
+          <Property Name="accountStatus" Type="Boolean" />
+          <Property Name="registerDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblExtraService">
+          <Key>
+            <PropertyRef Name="extraID" />
+          </Key>
+          <Property Name="extraID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productID" Type="Int32" Nullable="false" />
+          <Property Name="serpmeKahvalti" Type="Int32" />
+          <Property Name="yemekAlkolsuz" Type="Int32" />
+          <Property Name="kahvalti" Type="Int32" />
+          <Property Name="yemekAlkollu" Type="Int32" />
+          <Property Name="kokteylAlkolsuz" Type="Int32" />
+          <Property Name="kokteylAlkollu" Type="Int32" />
+          <Property Name="volkan" Type="Int32" />
+          <Property Name="kemanci" Type="Int32" />
+          <Property Name="dansoz" Type="Int32" />
+          <Property Name="lazerGosterisi" Type="Int32" />
+          <Property Name="fasilGrubu" Type="Int32" />
+          <Property Name="dj" Type="Int32" />
+          <Property Name="garson" Type="Int32" />
+          <Property Name="susleme" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblKullaniciTipleri">
+          <Key>
+            <PropertyRef Name="kullaniciID" />
+          </Key>
+          <Property Name="kullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullaniciTipi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblMusicSystem">
+          <Key>
+            <PropertyRef Name="musicID" />
+          </Key>
+          <Property Name="musicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bluetooth" Type="Boolean" />
+          <Property Name="usb" Type="Boolean" />
+          <Property Name="aux" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblPayment">
+          <Key>
+            <PropertyRef Name="paymentID" />
+          </Key>
+          <Property Name="paymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="creditCard" Type="Boolean" />
+          <Property Name="bankCard" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblProduct">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="descriptionTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="descriptionP1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="descriptionP2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="descriptionP3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="picturesID" Type="Int32" />
+          <Property Name="discountPercentage" Type="Int32" />
+          <Property Name="discountAvailable" Type="Boolean" />
+          <Property Name="suplierID" Type="Int32" />
+          <Property Name="minRentHour" Type="Int32" />
+          <Property Name="approved" Type="Boolean" />
+          <Property Name="yapimYili" Type="Int32" />
+          <Property Name="cabinetNumber" Type="Byte" />
+          <Property Name="captain" Type="Boolean" />
+          <Property Name="length" Type="Double" />
+          <Property Name="brand" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="typeID" Type="Int32" />
+          <Property Name="musicSystemID" Type="Int32" />
+          <Property Name="oneStarNum" Type="Int32" />
+          <Property Name="twoStarNum" Type="Int32" />
+          <Property Name="threeStarNum" Type="Int32" />
+          <Property Name="fourStarNum" Type="Int32" />
+          <Property Name="fiveStarNum" Type="Int32" />
+          <Property Name="starAverage" Type="Double" />
+          <Property Name="guestCapacity" Type="Int32" />
+          <Property Name="guestLanchCapacity" Type="Int32" />
+          <Property Name="airCondition" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblProductRank">
+          <Key>
+            <PropertyRef Name="rankID" />
+          </Key>
+          <Property Name="rankID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productID" Type="Int32" />
+          <Property Name="customerID" Type="Int32" />
+          <Property Name="rankPoint" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblProductType">
+          <Key>
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Name="typeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productID" Type="Int32" />
+          <Property Name="gulet" Type="Boolean" />
+          <Property Name="yelkenli" Type="Boolean" />
+          <Property Name="motorYat" Type="Boolean" />
+          <Property Name="katamaran" Type="Boolean" />
+          <Property Name="trawler" Type="Boolean" />
+          <Property Name="lobster" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblReservation">
+          <Key>
+            <PropertyRef Name="reservationID" />
+          </Key>
+          <Property Name="reservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerID" Type="Int32" />
+          <Property Name="paymentID" Type="Int32" />
+          <Property Name="createdDate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="startDate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="finishDate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="startTime" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="finishTime" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="cancelled" Type="Boolean" />
+          <Property Name="paymentDate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="productID" Type="Int32" />
+          <Property Name="resDetailID" Type="Int32" />
+          <Property Name="priceHour" Type="Int32" />
+          <Property Name="quantityHour" Type="Int32" />
+          <Property Name="discount" Type="Int32" />
+          <Property Name="totalBoatPrice" Type="Int32" />
+          <Property Name="paidedPrice" Type="Int32" />
+          <Property Name="tourType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="extrasNames" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="extrasTotalPrice" Type="Int32" />
+          <Property Name="total" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblSuplier">
+          <Key>
+            <PropertyRef Name="suplierID" />
+          </Key>
+          <Property Name="suplierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="companyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contactName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="contactLastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="webSite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="paymentMethodID" Type="Int32" />
+          <Property Name="discountPercentage" Type="Int32" />
+          <Property Name="discountAvailable" Type="Int32" />
+          <Property Name="currentReservationID" Type="Int32" />
+          <Property Name="logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="pictureNum" Type="Int32" />
+          <Property Name="adminAprove" Type="Int32" />
+          <Property Name="userID" Type="Int32" />
+          <Property Name="statusActive" Type="Int32" />
+          <Property Name="registerDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="tblYatRezSaatleri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="Int32" Nullable="false" />
+          <Property Name="dayDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="s0" Type="Boolean" />
+          <Property Name="s1" Type="Boolean" />
+          <Property Name="s2" Type="Boolean" />
+          <Property Name="s3" Type="Boolean" />
+          <Property Name="s4" Type="Boolean" />
+          <Property Name="s5" Type="Boolean" />
+          <Property Name="s6" Type="Boolean" />
+          <Property Name="s7" Type="Boolean" />
+          <Property Name="s8" Type="Boolean" />
+          <Property Name="s9" Type="Boolean" />
+          <Property Name="s10" Type="Boolean" />
+          <Property Name="s11" Type="Boolean" />
+          <Property Name="s12" Type="Boolean" />
+          <Property Name="s13" Type="Boolean" />
+          <Property Name="s14" Type="Boolean" />
+          <Property Name="s15" Type="Boolean" />
+          <Property Name="s16" Type="Boolean" />
+          <Property Name="s17" Type="Boolean" />
+          <Property Name="s18" Type="Boolean" />
+          <Property Name="s19" Type="Boolean" />
+          <Property Name="s20" Type="Boolean" />
+          <Property Name="s21" Type="Boolean" />
+          <Property Name="s22" Type="Boolean" />
+          <Property Name="s23" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblImage">
+          <Key>
+            <PropertyRef Name="imageID" />
+            <PropertyRef Name="productId" />
+          </Key>
+          <Property Name="imageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="Int32" Nullable="false" />
+          <Property Name="img1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img1s" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img2s" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img3s" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img4s" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img5s" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img6s" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img7s" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img8s" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img9s" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img10s" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="dbTekneEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblCustomers" EntityType="Self.tblCustomer" />
+          <EntitySet Name="tblExtraServices" EntityType="Self.tblExtraService" />
+          <EntitySet Name="tblKullaniciTipleris" EntityType="Self.tblKullaniciTipleri" />
+          <EntitySet Name="tblMusicSystems" EntityType="Self.tblMusicSystem" />
+          <EntitySet Name="tblPayments" EntityType="Self.tblPayment" />
+          <EntitySet Name="tblProducts" EntityType="Self.tblProduct" />
+          <EntitySet Name="tblProductRanks" EntityType="Self.tblProductRank" />
+          <EntitySet Name="tblProductTypes" EntityType="Self.tblProductType" />
+          <EntitySet Name="tblReservations" EntityType="Self.tblReservation" />
+          <EntitySet Name="tblSupliers" EntityType="Self.tblSuplier" />
+          <EntitySet Name="tblYatRezSaatleris" EntityType="Self.tblYatRezSaatleri" />
+          <EntitySet Name="tblImages" EntityType="Self.tblImage" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbTekneModelStoreContainer" CdmEntityContainer="dbTekneEntities">
+          <EntitySetMapping Name="tblCustomers">
+            <EntityTypeMapping TypeName="dbTekneModel.tblCustomer">
+              <MappingFragment StoreEntitySet="tblCustomer">
+                <ScalarProperty Name="customerID" ColumnName="customerID" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="accountStatus" ColumnName="accountStatus" />
+                <ScalarProperty Name="registerDate" ColumnName="registerDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblExtraServices">
+            <EntityTypeMapping TypeName="dbTekneModel.tblExtraService">
+              <MappingFragment StoreEntitySet="tblExtraService">
+                <ScalarProperty Name="extraID" ColumnName="extraID" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="serpmeKahvalti" ColumnName="serpmeKahvalti" />
+                <ScalarProperty Name="yemekAlkolsuz" ColumnName="yemekAlkolsuz" />
+                <ScalarProperty Name="kahvalti" ColumnName="kahvalti" />
+                <ScalarProperty Name="yemekAlkollu" ColumnName="yemekAlkollu" />
+                <ScalarProperty Name="kokteylAlkolsuz" ColumnName="kokteylAlkolsuz" />
+                <ScalarProperty Name="kokteylAlkollu" ColumnName="kokteylAlkollu" />
+                <ScalarProperty Name="volkan" ColumnName="volkan" />
+                <ScalarProperty Name="kemanci" ColumnName="kemanci" />
+                <ScalarProperty Name="dansoz" ColumnName="dansoz" />
+                <ScalarProperty Name="lazerGosterisi" ColumnName="lazerGosterisi" />
+                <ScalarProperty Name="fasilGrubu" ColumnName="fasilGrubu" />
+                <ScalarProperty Name="dj" ColumnName="dj" />
+                <ScalarProperty Name="garson" ColumnName="garson" />
+                <ScalarProperty Name="susleme" ColumnName="susleme" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblKullaniciTipleris">
+            <EntityTypeMapping TypeName="dbTekneModel.tblKullaniciTipleri">
+              <MappingFragment StoreEntitySet="tblKullaniciTipleri">
+                <ScalarProperty Name="kullaniciID" ColumnName="kullaniciID" />
+                <ScalarProperty Name="kullaniciTipi" ColumnName="kullaniciTipi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMusicSystems">
+            <EntityTypeMapping TypeName="dbTekneModel.tblMusicSystem">
+              <MappingFragment StoreEntitySet="tblMusicSystem">
+                <ScalarProperty Name="musicID" ColumnName="musicID" />
+                <ScalarProperty Name="bluetooth" ColumnName="bluetooth" />
+                <ScalarProperty Name="usb" ColumnName="usb" />
+                <ScalarProperty Name="aux" ColumnName="aux" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPayments">
+            <EntityTypeMapping TypeName="dbTekneModel.tblPayment">
+              <MappingFragment StoreEntitySet="tblPayment">
+                <ScalarProperty Name="paymentID" ColumnName="paymentID" />
+                <ScalarProperty Name="creditCard" ColumnName="creditCard" />
+                <ScalarProperty Name="bankCard" ColumnName="bankCard" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProducts">
+            <EntityTypeMapping TypeName="dbTekneModel.tblProduct">
+              <MappingFragment StoreEntitySet="tblProduct">
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="descriptionTitle" ColumnName="descriptionTitle" />
+                <ScalarProperty Name="descriptionP1" ColumnName="descriptionP1" />
+                <ScalarProperty Name="descriptionP2" ColumnName="descriptionP2" />
+                <ScalarProperty Name="descriptionP3" ColumnName="descriptionP3" />
+                <ScalarProperty Name="picturesID" ColumnName="picturesID" />
+                <ScalarProperty Name="discountPercentage" ColumnName="discountPercentage" />
+                <ScalarProperty Name="discountAvailable" ColumnName="discountAvailable" />
+                <ScalarProperty Name="suplierID" ColumnName="suplierID" />
+                <ScalarProperty Name="minRentHour" ColumnName="minRentHour" />
+                <ScalarProperty Name="approved" ColumnName="approved" />
+                <ScalarProperty Name="yapimYili" ColumnName="yapimYili" />
+                <ScalarProperty Name="cabinetNumber" ColumnName="cabinetNumber" />
+                <ScalarProperty Name="captain" ColumnName="captain" />
+                <ScalarProperty Name="length" ColumnName="length" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="musicSystemID" ColumnName="musicSystemID" />
+                <ScalarProperty Name="oneStarNum" ColumnName="oneStarNum" />
+                <ScalarProperty Name="twoStarNum" ColumnName="twoStarNum" />
+                <ScalarProperty Name="threeStarNum" ColumnName="threeStarNum" />
+                <ScalarProperty Name="fourStarNum" ColumnName="fourStarNum" />
+                <ScalarProperty Name="fiveStarNum" ColumnName="fiveStarNum" />
+                <ScalarProperty Name="starAverage" ColumnName="starAverage" />
+                <ScalarProperty Name="guestCapacity" ColumnName="guestCapacity" />
+                <ScalarProperty Name="guestLanchCapacity" ColumnName="guestLanchCapacity" />
+                <ScalarProperty Name="airCondition" ColumnName="airCondition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProductRanks">
+            <EntityTypeMapping TypeName="dbTekneModel.tblProductRank">
+              <MappingFragment StoreEntitySet="tblProductRank">
+                <ScalarProperty Name="rankID" ColumnName="rankID" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="customerID" ColumnName="customerID" />
+                <ScalarProperty Name="rankPoint" ColumnName="rankPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProductTypes">
+            <EntityTypeMapping TypeName="dbTekneModel.tblProductType">
+              <MappingFragment StoreEntitySet="tblProductType">
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="gulet" ColumnName="gulet" />
+                <ScalarProperty Name="yelkenli" ColumnName="yelkenli" />
+                <ScalarProperty Name="motorYat" ColumnName="motorYat" />
+                <ScalarProperty Name="katamaran" ColumnName="katamaran" />
+                <ScalarProperty Name="trawler" ColumnName="trawler" />
+                <ScalarProperty Name="lobster" ColumnName="lobster" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblReservations">
+            <EntityTypeMapping TypeName="dbTekneModel.tblReservation">
+              <MappingFragment StoreEntitySet="tblReservation">
+                <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+                <ScalarProperty Name="customerID" ColumnName="customerID" />
+                <ScalarProperty Name="paymentID" ColumnName="paymentID" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="finishDate" ColumnName="finishDate" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="finishTime" ColumnName="finishTime" />
+                <ScalarProperty Name="cancelled" ColumnName="cancelled" />
+                <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="resDetailID" ColumnName="resDetailID" />
+                <ScalarProperty Name="priceHour" ColumnName="priceHour" />
+                <ScalarProperty Name="quantityHour" ColumnName="quantityHour" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="totalBoatPrice" ColumnName="totalBoatPrice" />
+                <ScalarProperty Name="paidedPrice" ColumnName="paidedPrice" />
+                <ScalarProperty Name="tourType" ColumnName="tourType" />
+                <ScalarProperty Name="extrasNames" ColumnName="extrasNames" />
+                <ScalarProperty Name="extrasTotalPrice" ColumnName="extrasTotalPrice" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSupliers">
+            <EntityTypeMapping TypeName="dbTekneModel.tblSuplier">
+              <MappingFragment StoreEntitySet="tblSuplier">
+                <ScalarProperty Name="suplierID" ColumnName="suplierID" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="contactName" ColumnName="contactName" />
+                <ScalarProperty Name="contactLastName" ColumnName="contactLastName" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="webSite" ColumnName="webSite" />
+                <ScalarProperty Name="paymentMethodID" ColumnName="paymentMethodID" />
+                <ScalarProperty Name="discountPercentage" ColumnName="discountPercentage" />
+                <ScalarProperty Name="discountAvailable" ColumnName="discountAvailable" />
+                <ScalarProperty Name="currentReservationID" ColumnName="currentReservationID" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="pictureNum" ColumnName="pictureNum" />
+                <ScalarProperty Name="adminAprove" ColumnName="adminAprove" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="statusActive" ColumnName="statusActive" />
+                <ScalarProperty Name="registerDate" ColumnName="registerDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblYatRezSaatleris">
+            <EntityTypeMapping TypeName="dbTekneModel.tblYatRezSaatleri">
+              <MappingFragment StoreEntitySet="tblYatRezSaatleri">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="dayDate" ColumnName="dayDate" />
+                <ScalarProperty Name="s0" ColumnName="s0" />
+                <ScalarProperty Name="s1" ColumnName="s1" />
+                <ScalarProperty Name="s2" ColumnName="s2" />
+                <ScalarProperty Name="s3" ColumnName="s3" />
+                <ScalarProperty Name="s4" ColumnName="s4" />
+                <ScalarProperty Name="s5" ColumnName="s5" />
+                <ScalarProperty Name="s6" ColumnName="s6" />
+                <ScalarProperty Name="s7" ColumnName="s7" />
+                <ScalarProperty Name="s8" ColumnName="s8" />
+                <ScalarProperty Name="s9" ColumnName="s9" />
+                <ScalarProperty Name="s10" ColumnName="s10" />
+                <ScalarProperty Name="s11" ColumnName="s11" />
+                <ScalarProperty Name="s12" ColumnName="s12" />
+                <ScalarProperty Name="s13" ColumnName="s13" />
+                <ScalarProperty Name="s14" ColumnName="s14" />
+                <ScalarProperty Name="s15" ColumnName="s15" />
+                <ScalarProperty Name="s16" ColumnName="s16" />
+                <ScalarProperty Name="s17" ColumnName="s17" />
+                <ScalarProperty Name="s18" ColumnName="s18" />
+                <ScalarProperty Name="s19" ColumnName="s19" />
+                <ScalarProperty Name="s20" ColumnName="s20" />
+                <ScalarProperty Name="s21" ColumnName="s21" />
+                <ScalarProperty Name="s22" ColumnName="s22" />
+                <ScalarProperty Name="s23" ColumnName="s23" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblImages">
+            <EntityTypeMapping TypeName="dbTekneModel.tblImage">
+              <MappingFragment StoreEntitySet="tblImage">
+                <ScalarProperty Name="imageID" ColumnName="imageID" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="img1" ColumnName="img1" />
+                <ScalarProperty Name="img1s" ColumnName="img1s" />
+                <ScalarProperty Name="img2" ColumnName="img2" />
+                <ScalarProperty Name="img2s" ColumnName="img2s" />
+                <ScalarProperty Name="img3" ColumnName="img3" />
+                <ScalarProperty Name="img3s" ColumnName="img3s" />
+                <ScalarProperty Name="img4" ColumnName="img4" />
+                <ScalarProperty Name="img4s" ColumnName="img4s" />
+                <ScalarProperty Name="img5" ColumnName="img5" />
+                <ScalarProperty Name="img5s" ColumnName="img5s" />
+                <ScalarProperty Name="img6" ColumnName="img6" />
+                <ScalarProperty Name="img6s" ColumnName="img6s" />
+                <ScalarProperty Name="img7" ColumnName="img7" />
+                <ScalarProperty Name="img7s" ColumnName="img7s" />
+                <ScalarProperty Name="img8" ColumnName="img8" />
+                <ScalarProperty Name="img8s" ColumnName="img8s" />
+                <ScalarProperty Name="img9" ColumnName="img9" />
+                <ScalarProperty Name="img9s" ColumnName="img9s" />
+                <ScalarProperty Name="img10" ColumnName="img10" />
+                <ScalarProperty Name="img10s" ColumnName="img10s" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

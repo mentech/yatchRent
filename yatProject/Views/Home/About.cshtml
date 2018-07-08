@@ -1,0 +1,15 @@
+﻿@model List<yatProject.Models.ApplicationUser>
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+@foreach (var item in Model)
+{
+    <p> @item.Roles.Count</p>
+
+    <p> @item.UserName  </p>
+    <p> @item.Email</p>
+}

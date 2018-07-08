@@ -1,0 +1,107 @@
+﻿@model List<string>
+</br></br>
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/datepicker/bootstrap.datepicker.css" rel="stylesheet" />
+<link href="~/Content/datepicker/tarihGuzellestirme.css" rel="stylesheet" />
+
+
+<script src="~/Content/datepicker/jquery2.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Content/datepicker/bootstrap-datepicker.js"></script>
+
+@using (Html.BeginForm("rezSeceneklerTekneGetir", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+
+
+    <div class="p-3 container jumbotron ">
+
+        <div class="row p-3">
+
+            <div class="col-md-4 d-flex flex-column">
+                <label for="rezTarih"> Rezervasyon Tarihi</label>
+                <input name="seciliRezTarihi" id="rezTarih" type="text" readonly="readonly" value="08.08.2018" class="rezTarih takvimInput form-control-lg">
+
+
+            </div>
+
+
+            <div class="col-md-4 d-flex flex-column">
+                <label for="rezSaat"> Başlama Zamanı</label>
+                <select id="rezSaat" name="seciliRezSaati" class="form-control-lg ">
+
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+                    <option value="0">00:00</option>
+                    <option value="1">01:00</option>
+                    <option value="2">02:00</option>
+                    <option value="3">03:00</option>
+                    <option value="4">04:00</option>
+                    <option value="5">05:00</option>
+                    <option value="6">06:00</option>
+                    <option value="7">07:00</option>
+                    <option value="8">08:00</option>
+                    <option value="9">09:00</option>
+
+                </select>
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <label for="kacSaat"> Kaç Saat Kiralanacak </label>
+                <input id="kacSaat" name="seciliTurSaati" value="2" type="text" class="form-control-lg" maxlength="2" onkeypress="if (event.keyCode != 46 && event.keyCode > 31 && (event.keyCode < 48 || event.keyCode > 57)) return false; return true;">
+
+            </div>
+        </div>
+
+        <div class="row p-3">
+            <div class="col-md-4 d-flex flex-column">
+                <label for="kisiSayisi">Kişi Sayısı</label>
+                <input id="kisiSayisi" name="seciliKisiSayisi" type="text" class="form-control-lg" maxlength="2" onkeypress="if (event.keyCode != 46 && event.keyCode > 31 && (event.keyCode < 48 || event.keyCode > 57)) return false; return true;">
+
+            </div>
+            <div class="col-md-4">
+                <label for="tekneTipi">Tekne Tipi</label>
+                <select id="tekneTipi" name="seciliTurTipi" class="form-control-lg ">
+                    <option value="1">Boğaz Turu</option>
+                    <option value="2">Adalar Yüzme Turu</option>
+                    <option value="3">Poyrazköy Yüzme Turu</option>
+                </select>
+
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <label for="kalkisYeri">Kalkış Yeri</label>
+                <select id="kalkisYeri" name="seciliKalkisYeri" class="form-control-lg " >
+                    <option value="1">Bebek</option>
+                    <option value="2">Kuruçeşme </option>
+                    <option value="3">Arnavutköy</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="pt-3 pb-3 text-center ">
+            <input class="btn btn-primary btn-lg pr-4 pl-4" type="submit" value="Tekna Ara" />
+        </div>
+    </div>
+
+}
+
+
+<script src="~/Content/datepicker/afterDatepicker.js"></script>
+
+
+
