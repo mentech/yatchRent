@@ -36,9 +36,12 @@ namespace yatProject.supliers.controller
 
                     // Save the uploaded file to "UploadedFiles" folder
                     httpPostedFile.SaveAs(fileSavePath);
+
                 }
             }
             return View();
+
+
         }
 
 
