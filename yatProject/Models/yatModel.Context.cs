@@ -15,11 +15,19 @@ namespace yatProject.Models
     
     public partial class dbTekneEntities : DbContext
     {
+        private static dbTekneEntities dbTekne;
         public dbTekneEntities()
             : base("name=dbTekneEntities")
         {
         }
-    
+        public static dbTekneEntities baglan()
+        {
+            if (dbTekne == null)
+            {
+                dbTekne = new dbTekneEntities();
+            }
+            return dbTekne;
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
