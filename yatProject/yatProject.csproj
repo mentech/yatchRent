@@ -581,7 +581,6 @@
     <Content Include="supliers\scss\_variables.scss" />
     <Content Include="Views\suplier\index.cshtml" />
     <Content Include="Views\Shared\_suplierLayout.cshtml" />
-    <Content Include="Views\suplier\tekneEkle.cshtml" />
     <Content Include="supliers\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="supliers\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="supliers\vendor\bootstrap\js\bootstrap.bundle.js.map" />
@@ -624,6 +623,8 @@
     <Content Include="supliers\vendor\font-awesome\scss\_variables.scss" />
     <Content Include="supliers\vendor\jquery\jquery.min.map" />
     <Content Include="supliers\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Views\suplier\addYatch.cshtml" />
+    <Content Include="Views\suplier\addYatchImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

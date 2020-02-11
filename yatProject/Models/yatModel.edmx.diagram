@@ -8,14 +8,14 @@
         <EntityTypeShape EntityType="dbTekneModel.tblCustomer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="dbTekneModel.tblExtraService" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="dbTekneModel.tblKullaniciTipleri" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbTekneModel.tblMusicSystem" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbTekneModel.tblPayment" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTekneModel.tblMusicSystem" Width="1.5" PointX="4.625" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTekneModel.tblPayment" Width="1.5" PointX="0.5" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="dbTekneModel.tblProduct" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbTekneModel.tblProductRank" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTekneModel.tblProductRank" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="dbTekneModel.tblProductType" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbTekneModel.tblReservation" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbTekneModel.tblSuplier" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbTekneModel.tblYatRezSaatleri" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTekneModel.tblReservation" Width="1.5" PointX="12.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTekneModel.tblSuplier" Width="1.5" PointX="8.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTekneModel.tblYatRezSaatleri" Width="1.5" PointX="4.625" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="dbTekneModel.tblImage" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>

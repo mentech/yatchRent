@@ -1,0 +1,220 @@
+﻿
+@{
+    ViewBag.Title = "addYatchImage";
+    Layout = "~/Views/Shared/_suplierLayout.cshtml";
+}
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="#">Yönetim Paneli</a>
+    </li>
+    <li class="breadcrumb-item active">Tekne Foto Ekleme</li>
+</ol>
+<link href="~/supliers/style/fotoEkleme.css" rel="stylesheet" />
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+
+<div class="row">
+
+    <div class="col-md-3">
+
+
+        <form id="file-upload-form" class="uploader">
+
+            <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+            <label for="file-upload" id="file-drag">
+                <img id="file-image" src="#" alt="Preview" name="foto" style='height: 100%; width: 100%; object-fit: contain' class="hidden">
+                <div id="start">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <div>Fotoğraf seçin veya buraya sürükleyin</div>
+                    <div id="notimage" class="hidden"> </div>
+                    <span class="btn btn-primary">Resim Seç</span>
+                </div>
+                <div id="response" class="hidden">
+                    <div id="messages"></div>
+                    <progress class="progress" id="file-progress" value="0">
+                        <span>0</span>%
+                    </progress>
+                </div>
+            </label>
+
+        </form>
+
+    </div>
+
+
+    <div class="col-md-3">
+
+
+        <form id="file-upload-form1" class="uploader1 uploader">
+            <input id="file-upload1" type="file" name="fileUpload1" accept="image/*" />
+            <label for="file-upload1" id="file-drag1">
+                <img id="file-image1" src="#" alt="Preview" style='height: 100%; width: 100%; object-fit: contain' class="hidden">
+                <div id="start1">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <div>Fotoğraf seçin veya buraya sürükleyin</div>
+                    <div id="notimage1" class="hidden"> </div>
+                    <span class="btn btn-primary">Resim Seç</span>
+                </div>
+                <div id="response1" class="hidden">
+                    <div id="messages1"></div>
+                    <progress class="progress1 progress" id="file-progress1" value="0">
+                        <span>0</span>%
+                    </progress>
+                </div>
+            </label>
+
+        </form>
+
+    </div>
+
+
+
+    <div class="col-md-3">
+
+
+        <form id="file-upload-form2" class="uploader2 uploader">
+            <input id="file-upload2" type="file" name="fileUpload2" accept="image/*" />
+            <label for="file-upload2" id="file-drag2">
+                <img id="file-image2" src="#" alt="Preview" style='height: 100%; width: 100%; object-fit: contain' class="hidden">
+                <div id="start2">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <div>Fotoğraf seçin veya buraya sürükleyin</div>
+                    <div id="notimage2" class="hidden"> </div>
+                    <span class="btn btn-primary">Resim Seç</span>
+                </div>
+                <div id="response2" class="hidden">
+                    <div id="messages2"></div>
+                    <progress class="progress2 progress" id="file-progress2" value="0">
+                        <span>0</span>%
+                    </progress>
+                </div>
+            </label>
+
+        </form>
+
+    </div>
+
+
+
+    <div class="col-md-3">
+
+
+        <form id="file-upload-form3" class="uploader3 uploader">
+            <input id="file-upload3" type="file" name="fileUpload3" accept="image/*" />
+            <label for="file-upload3" id="file-drag3">
+                <img id="file-image3" src="#" alt="Preview" style='height: 100%; width: 100%; object-fit: contain' class="hidden">
+                <div id="start3">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <div>Fotoğraf seçin veya buraya sürükleyin</div>
+                    <div id="notimage3" class="hidden"> </div>
+                    <span class="btn btn-primary">Resim Seç</span>
+                </div>
+                <div id="response3" class="hidden">
+                    <div id="messages3"></div>
+                    <progress class="progress3 progress" id="file-progress3" value="0">
+                        <span>0</span>%
+                    </progress>
+                </div>
+            </label>
+
+        </form>
+
+    </div>
+
+
+    <div class="col-md-3">
+
+
+        <form id="file-upload-form4" class="uploader4 uploader">
+            <input id="file-upload4" type="file" name="fileUpload4" accept="image/*" />
+            <label for="file-upload4" id="file-drag4">
+                <img id="file-image4" src="#" alt="Preview" style='height: 100%; width: 100%; object-fit: contain' class="hidden">
+                <div id="start4">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <div>Fotoğraf seçin veya buraya sürükleyin</div>
+                    <div id="notimage4" class="hidden"> </div>
+                    <span class="btn btn-primary">Resim Seç</span>
+                </div>
+                <div id="response4" class="hidden">
+                    <div id="messages4"></div>
+                    <progress class="progress4 progress" id="file-progress4" value="0">
+                        <span>0</span>%
+                    </progress>
+                </div>
+            </label>
+
+        </form>
+
+    </div>
+
+
+
+    <div class="col-md-3">
+
+
+        <form id="file-upload-form5" class="uploader5 uploader">
+            <input id="file-upload5" type="file" name="fileUpload5" accept="image/*" />
+            <label for="file-upload5" id="file-drag5">
+                <img id="file-image5" src="#" alt="Preview" style='height: 100%; width: 100%; object-fit: contain' class="hidden">
+                <div id="start5">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <div>Fotoğraf seçin veya buraya sürükleyin</div>
+                    <div id="notimage5" class="hidden"> </div>
+                    <span class="btn btn-primary">Resim Seç</span>
+                </div>
+                <div id="response5" class="hidden">
+                    <div id="messages5"></div>
+                    <progress class="progress5 progress" id="file-progress5" value="0">
+                        <span>0</span>%
+                    </progress>
+                </div>
+            </label>
+
+        </form>
+
+    </div>
+
+
+
+</div>
+
+<div class="pt-3 pb-3 text-center ">
+    <input type="type" name="yazi" value="reizzzzz" />
+    <input id="fotoYukle" class="btn btn-primary btn-lg " type="submit" value="Fotoğrafları Yükle" />
+</div>
+
+<script>
+    $("#fotoYukle").click(function () {
+        alert("butana bastın reizzzzzzzz");
+                 var data = new FormData();
+        var files = $("#file-upload").get(0).files;
+        files[1] = $("#file-upload1").get(0).files;
+        files[2] = $("#file-upload2").get(0).files;
+        if (files.length > 0)
+        {
+            data.append("helpSectionImages", files[0]);
+            data.append("helpSectionImages", files[1]);
+            data.append("helpSectionImages", files[2]);
+         }
+         $.ajax({
+            url: '@Url.Action("fotoekle","suplier")',
+               type: "POST",
+         processData: false,
+         contentType: false,
+         data: data,
+         success: function (response) {
+             alert("uploaded");
+         },
+         error: function (er) {
+            alert("error");
+         }
+
+      });
+
+            });
+
+</script>
+
+<script src="~/supliers/jsler/uploadFile.js"></script>

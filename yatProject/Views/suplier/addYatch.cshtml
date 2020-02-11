@@ -1,0 +1,157 @@
+﻿@model yatProject.Models.tblProduct
+@{
+
+    ViewBag.Title = "addYatch";
+    Layout = "~/Views/Shared/_suplierLayout.cshtml";
+}
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="#">Yönetim Paneli</a>
+    </li>
+    <li class="breadcrumb-item active">Yeni Tekne Ekleme</li>
+</ol>
+
+<style>
+    .field-validation-error {
+        color: red;
+    }
+
+    .input-validation-error {
+        border: 1.5px solid red;
+    }
+</style>
+
+@using (Html.BeginForm("addYatch", "Suplier", FormMethod.Post, new { novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="p-3 container jumbotron ">
+        <div class="row">
+            <div class="col-md-4 d-flex flex-column">
+                @Html.LabelFor(m => m.name)
+                @Html.TextBoxFor(m => m.name, new { @maxlength = "50", @class = "form-control", @placeholder = "Ad yazın..." })
+
+                @Html.ValidationMessageFor(m => m.name)
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <label> Tekne Adı </label>
+                <input id="yatchName" name="name" type="text" class="form-control" maxlength="50" >
+                @Html.ValidationMessageFor(m => m.name)
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <label> Tekne Açıklama Başlığı </label>
+                <input id="title" name="descriptionTitle" type="text" class="form-control" maxlength="50">
+
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <label>Tekne Açıklaması </label>
+                <textarea id="description1" name="descriptionP1" type="text" class="form-control" maxlength="4000" placeholder="örnek açıklama: Arnavutköy sahilinde bağlıdır. Arnavutköy, Kuleli ve Beylerbeyi semtleri hareket ve bitiş noktası olarak kullanılır
+Sadece yaz ayları değil kış aylarında da kesintisiz olarak hizmet verebilir
+Arka havuz şeffaf branda ile kapatılıp, ısıtma sistemi çalıştırıldığında soğuk hava koşullarından etkilenilmez
+Ön minderlerde güneşlenme, arka havuz ve üst katta oturma imkanı vardır
+Yemeksiz kiralama yapılarak dışarıdan yiyecek ve içecek getirilebilir"></textarea>
+
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <label>Tekne Açıklaması 2</label>
+
+                <textarea id="description2" name="descriptionP2" type="text" class="form-control" maxlength="2000" placeholder="1. alan yetmezse burayı da kullanabilirsiniz."></textarea>
+
+            </div>
+
+            <div class="col-md-4 d-flex flex-column">
+                <label>Minimum Kiralama Saati</label>
+                <input name="minRentHour" value="2" type="text" class="form-control" maxlength="2" onpaste="return false;" onkeypress="if (event.keyCode != 46 && event.keyCode > 31 && (event.keyCode < 48 || event.keyCode > 57)) return false; return true;">
+
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <label>Tekne Yapım Yılı</label>
+                <input name="yapimYili" type="text" class="form-control" maxlength="4" onpaste="return false;" onkeypress="if (event.keyCode != 46 && event.keyCode > 31 && (event.keyCode < 48 || event.keyCode > 57)) return false; return true;">
+
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <label>Kabin Sayısı</label>
+                <input name="cabinetNumber" type="text" class="form-control" maxlength="2" onpaste="return false;" onkeypress="if (event.keyCode != 46 && event.keyCode > 31 && (event.keyCode < 48 || event.keyCode > 57)) return false; return true;">
+
+            </div>
+
+
+            <div class="col-md-4 d-flex flex-column">
+                <label>Tekne Uzunluğu (Metre) </label>
+                <input name="length" type="text" class="form-control" maxlength="4" onpaste="return false;" onkeypress="if (event.keyCode != 46 && event.keyCode > 31 && (event.keyCode < 48 || event.keyCode > 57)) return false; return true;">
+
+            </div>
+
+            <div class="col-md-4 d-flex flex-column">
+                <label>Tekne Genişliği (Metre)</label>
+                <input name="width" type="text" class="form-control" maxlength="4" onpaste="return false;" onkeypress="if (event.keyCode != 46 && event.keyCode > 31 && (event.keyCode < 48 || event.keyCode > 57)) return false; return true;">
+
+            </div>
+
+            <div class="col-md-4 d-flex flex-column">
+                <label> Tekne Markası </label>
+                <input id="title" name="brand" type="text" class="form-control" maxlength="30">
+
+            </div>
+
+            <div class="col-md-4 d-flex flex-column">
+                <label> Tekne Modeli </label>
+                <input id="title" name="model" type="text" class="form-control" maxlength="30">
+
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <label>Tekne Tipi</label>
+                <select name="typeID" class="form-control ">
+                    <option value="1">Gulet</option>
+                    <option value="2">Yelkenli</option>
+                    <option value="3">Motor Yat</option>
+                    <option value="4">Katamaran</option>
+                    <option value="5">Trawler</option>
+                    <option value="6">Lobster</option>
+                </select>
+
+            </div>
+
+            <div class="col-md-4 d-flex flex-column">
+                <label>Müzik Sistemi var mı?</label>
+                <select name="musicSystemID" class="form-control ">
+                    <option value="True">Evet</option>
+                    <option value="False">Hayır</option>
+                </select>
+
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <label>Yolcu Kapasitesi</label>
+                <input name="guestCapacity" type="text" class="form-control" maxlength="3" onpaste="return false;" onkeypress="if (event.keyCode != 46 && event.keyCode > 31 && (event.keyCode < 48 || event.keyCode > 57)) return false; return true;">
+
+            </div>
+
+            <div class="col-md-4 d-flex flex-column">
+                <label>Yolcu Kapasitesi (yemekli) </label>
+                <input name="guestLanchCapacity" type="text" class="form-control" maxlength="3" onpaste="return false;" onkeypress="if (event.keyCode != 46 && event.keyCode > 31 && (event.keyCode < 48 || event.keyCode > 57)) return false; return true;">
+
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <label>Klima var mı?</label>
+                <select name="airCondition" class="form-control ">
+                    <option value="True">Evet</option>
+                    <option value="False">Hayır</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="pt-3 pb-3 text-center ">
+            <input class="btn btn-primary btn-lg pr-4 pl-4" type="submit" value="Tekne Ekle" />
+        </div>
+    </div>
+
+}
+
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+
