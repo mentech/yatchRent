@@ -189,15 +189,12 @@
     $("#fotoYukle").click(function () {
         alert("butana bastın reizzzzzzzz");
                  var data = new FormData();
-        var files = $("#file-upload").get(0).files;
-        files[1] = $("#file-upload1").get(0).files;
-        files[2] = $("#file-upload2").get(0).files;
-        if (files.length > 0)
-        {
-            data.append("helpSectionImages", files[0]);
-            data.append("helpSectionImages", files[1]);
-            data.append("helpSectionImages", files[2]);
-         }
+        data.append("img", $("#file-upload").get(0).files[0]);
+        data.append("img", $("#file-upload1").get(0).files[0]);
+        data.append("img", $("#file-upload2").get(0).files[0]);
+        data.append("img", $("#file-upload3").get(0).files[0]);
+        data.append("img", $("#file-upload4").get(0).files[0]);
+        data.append("img", $("#file-upload5").get(0).files[0]);
          $.ajax({
             url: '@Url.Action("fotoekle","suplier")',
                type: "POST",

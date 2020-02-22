@@ -35,29 +35,20 @@ namespace yatProject.supliers.controller
 
             return View();
         }
-        
+        [HttpPost]
         public void fotoEkle (HttpPostedFileBase fileUpload, string yazi)
         {
-
-            var riiz = Request.Files;
-
             if (HttpContext.Request.Files.AllKeys.Any())
             {
-                // Get the uploaded image from the Files collection
-                var httpPostedFile = HttpContext.Request.Files[0];
-
-                if (httpPostedFile != null)
+                for (int i = 0; i < HttpContext.Request.Files.Count; i++)
                 {
-                    // Validate the uploaded image(optional)
-
-                    // Get the complete file path
-                   // var fileSavePath = (HttpContext.Server.MapPath("~/images") + httpPostedFile.FileName.Substring(httpPostedFile.FileName.LastIndexOf(@"\")));
-                    httpPostedFile.SaveAs(System.IO.Path.Combine(Server.MapPath("~/images/") + System.IO.Path.GetFileName(httpPostedFile.FileName.ToString())));
-
-                    // Save the uploaded file to "UploadedFiles" folder
-                   // httpPostedFile.SaveAs(fileSavePath);
-
+                    var httpPostedFile = HttpContext.Request.Files[i];
+                    if (httpPostedFile != null)
+                    {
+                        httpPostedFile.SaveAs(System.IO.Path.Combine(Server.MapPath("~/images/") + System.IO.Path.GetFileName(httpPostedFile.FileName.ToString())));
+                    }
                 }
+                
             }
             
         }

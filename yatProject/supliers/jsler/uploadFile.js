@@ -97,7 +97,6 @@ function ekUpload() {
             pBar.value = e.loaded;
         }
     }
-
     function uploadFile(file) {
 
         var xhr = new XMLHttpRequest(),
